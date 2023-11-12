@@ -4,7 +4,7 @@ import random
 import pickle
 
 def prediction(data):
-    load_model = open("/Users/varun/DS/junction2023/habify/status_model.pkl", 'rb')
+    load_model = open("/Users/varun/DS/Hackathon/Habify_Plus/habify_backend/status_model.pkl", 'rb')
     classifier = pickle.load(load_model)
 
     random_index = random.choice(data.index)
@@ -23,7 +23,7 @@ def prediction(data):
     return(prediction[0])
 
 # Load the test dataset into a DataFrame
-test_data = pd.read_csv("/Users/varun/DS/junction2023/habify/test_data.csv")
+test_data = pd.read_csv("/Users/varun/DS/Hackathon/Habify_Plus/habify_backend/test_data.csv")
 
 result = prediction(test_data)
 print(result)
